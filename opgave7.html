@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <p id="hilsen"></p>
+
+    <script>
+        let hilsen;
+        let myDate = new Date();
+        let timer = myDate.getHours();
+
+        console.log(myDate);
+
+        if (timer >= 5 && timer <= 10) {
+            hilsen = "godmorgen";
+        } else if (timer >= 10 && timer <= 18) {
+            hilsen = "goddag";
+        } else if (timer >= 18 && timer <= 24) {
+            hilsen = "Godaften";
+        } else if (timer >= 24 && timer <= 5)
+            hilsen = "Godnat";
+
+
+
+
+        document.querySelector("#hilsen").textContent = hilsen + " og velkommen til 2. semester"
+
+    </script>
+</body>
+
+</html>
