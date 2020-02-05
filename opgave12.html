@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <h1>Gæt et nummer mellem 1 og 20</h1>
+
+    <p>Se om du kan gætte det rigtige nummer</p>
+
+    <div class="form">
+        <label for="guessField">Skriv dit gæt her: </label>
+        <input type="text" id="guessField" class="guessField">
+        <input type="submit" value="Send Gæt" class="guessSubmit" id="submitguess">
+    </div>
+
+    <script>
+        let y = 5
+        var guess = 1;
+
+
+        document.querySelector("#submitguess").addEventListener("click", clickHandler)
+
+
+
+        function clickHandler() {
+
+            var x = document.querySelector("#guessField").value;
+
+            if (x == y) {
+                alert("TILLYKKE du gætte det på  " +
+                    guess + " gæt ");
+            } else if (x > y)
+
+            {
+                guess++;
+                alert("Desværre, prøv et mindre nummer");
+            } else {
+                guess++;
+                alert("Desværre, prøv et større nummer")
+            }
+        }
+
+    </script>
+</body>
+
+</html>
