@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="form">
+        <label for="guessField1">Ældste Alder: </label>
+        <input type="text" id="alderfield1" class="aldersfield1">
+        <label for="guessField2">Yngste Alder: </label>
+        <input type="text" id="alderfield2" class="aldersfield2">
+        <input type="submit" value="Send Alder" class="alderSubmit" id="submitalder">
+
+    </div>
+    <script>
+        document.querySelector("#submitalder").addEventListener("click", clickHandler)
+
+        function clickHandler() {
+
+
+            let ageOne = document.querySelector("#alderfield1").value;
+            let ageTwo = document.querySelector("#alderfield2").value;
+            let dateRule = ageOne / 2 + 7;
+
+
+            if (ageOne < 15) {
+                alert("DU SKAL VÆRE OVER 15 ÅR!");
+            } else if (ageTwo < 15) {
+                alert("DU SKAL VÆRE OVER 15 ÅR!");
+            } else if (ageTwo => dateRule) {
+                alert("I er et godt match, du kan date en som er " + dateRule + " år gammel, hvis det skulle være")
+            }
+        }
+
+    </script>
+</body>
+
+</html>
