@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+</head>
+
+<body>
+
+    <script>
+        let spørgsmålEt = prompt("Hvad er dit navn?");
+        let spørgsmålTo = prompt("Hvem har lavet nummeret 'Nothing Else Matters'?");
+        let spørgsmålTre = prompt("Hvem har instrueret 'Ringenes Herre?");
+        let spørgsmålFire = prompt("Hvem af disse 3 skuespillere har aldrig vundet en oscar: Leonardo Dicaprio, Al Pacino eller Johnny Depp?");
+        let spørgsmålFem = prompt("Kan du li' Moonbar?");
+        let korrekteSvar = 0;
+        if (spørgsmålEt != " ") {
+            korrekteSvar += 1;
+            document.write("<p>KORREKT " + spørgsmålEt + "</p>");
+        }
+        if (spørgsmålTo.toUpperCase() == "METALLICA") {
+            korrekteSvar += 1;
+            document.write("<p>KORREKT " + spørgsmålTwo + "</p>");
+        }
+        if (spørgsmålTre.toUpperCase() == "PETER JACKSON") {
+            korrekteSvar += 1;
+            document.write("<p>KORREKT " + spørgsmålTre + "</p>");
+        }
+        if (spørgsmålFire.toUpperCase() == "JOHNNY DEPP") {
+            korrekteSvar += 1;
+            document.write("<p>KORREKT " + spørgsmålFire + "</p>");
+        }
+        if (spørgsmålFem.toUpperCase() == "JA") {
+            korrekteSvar += 1;
+            document.write("<p>KORREKT " + spørgsmålFem + "</p>");
+        }
+        let rankVærdi = 0;
+        if (korrekteSvar == 5) {
+            rankVærdi = "Førsteplads, Guld";
+        } else if (korrekteSvar >= 3 && korrekteSvar < 5) {
+            rankVærdi = "Andenplads, Sølv";
+        } else if (korrekteSvar >= 1 && korrekteSvar < 3) {
+            rankVærdi = "Tredjeplads, Bronze"
+        } else {
+            rankVærdi = "Du har tabt";
+        }
+        document.write("<h2>Du fik " + korrekteSvar + " korrekte svar og fik en " + rankVærdi + " .</h2>");
+
+    </script>
+</body>
+
+</html>

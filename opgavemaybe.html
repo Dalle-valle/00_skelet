@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <div id="quiz"></div>
+    <button id="send">Send Svar</button>
+    <div id="resultat"></div>
+    <script>
+        // Variabler med queryselector
+
+        const quizContainer = document.querySelector("#quiz");
+        const sendKnap = document.querySelector("#send");
+        const resultatContainer = document.querySelector("#resultat");
+
+        // Funktioner til quiz
+
+        function bygQuiz() {
+
+            // Laver en variabel til at indeholde HTML output
+
+            const output = [];
+
+            // til hvert spørgsmål via loop
+
+            mineSpørgsmål.forEach(
+                (nuværendeSpørgsmål, spørgsmålsNummer) => {
+
+                    // Laver en variabel til at indholde svar
+
+                    const svar = [];
+
+                    // Og en variabel for hvert muligt svar
+
+                    for (letter in nuværendeSpørgsmål.svar) {
+
+                        // Tilføjer en HTML radiobutton
+
+                        svar.push(
+                            `<label >
+                        <input type = "radio"
+                        name = "spørgsmål${spørgsmålsNummer}"
+                        value = "${letter}" >
+                        $ {letter}:
+                        $ {nuværendeSpørgsmål.svar[letter]}
+
+                        </label>`
+                        );
+                    }
+
+
+                    // Tilføj dette spørgsmål og dets svar til outputtet
+
+                    output.push(`<div class="spørgsmål"> ${nuværendeSpørgsmål.spørgsmål} </div>
+        <div class="answers"> ${answers.join('')} </div>`);
+
+
+
+                }
+
+            );
+            // Combine alle output til one string i HTML
+
+            quizContainer.innerHTML = output.join('');
+        }
+
+
+
+        function visResultater() {};
+
+        // Kald funktionen med det samme
+
+        bygQuiz();
+
+        // Tilføj eventlistener til sendknappen
+
+        sendKnap.addEventListener("click", visResultater);
+
+        // Lav spørgsmål i array
+
+        const mineSpørgsmål = [{
+                spørgsmål: "Hvem af disse kunstnere har lavet sangen 'Nothing Else Matters' ",
+                svar: {
+                    a: "Iron Maiden",
+                    b: "Metallica",
+                    c: "Megadeth"
+                },
+                korrektSvar: "b"
+            },
+            {
+                question: "Hvilken af disse skuespillere har aldrig vundet en Oscar?",
+                answers: {
+                    a: "Al Pacino",
+                    b: "Leonardo Dicaprio",
+                    c: "Johnny Depp"
+                },
+                correctAnswer: "c"
+            },
+            {
+                question: "Hvilket spil er i Guiness Rekordbog for at have vundet flest priser?",
+                answers: {
+                    a: "God of War",
+                    b: "Grand Theft Auto V",
+                    c: "The Last of Us",
+                    d: "Fornite"
+                },
+                correctAnswer: "c"
+            },
+            {
+                question: "Hvad hed instruktøren bag 'Ringenes herre' filmene?",
+                answers: {
+                    a: "Quentin Tarantino",
+                    b: "Peter Jackson",
+                    c: "Steven Spielberg",
+                    d: "Ole Wedel"
+                },
+                correctAnswer: "b"
+            }, {
+                question: "Hvor mange stjerner er der på det kinesiske flag?",
+                answers: {
+                    a: "4",
+                    b: "3",
+                    c: "6",
+                    d: "5"
+                },
+                correctAnswer: "d"
+            }
+
+
+        ];
+
+    </script>
+</body>
+
+</html>
