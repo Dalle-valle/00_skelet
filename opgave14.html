@@ -25,23 +25,13 @@
 <body>
 
 
-    <div class="form">
-        <label for="guessField">Check hundealder </label>
-        <input type="text" id="guessField" class="guessField">
-        <input type="submit" value="Tjek hundealder" class="guessSubmit" id="submitguess">
-    </div>
+
 
 
 
     <script>
-        document.querySelector("#submitguess").addEventListener("click", clickHandler);
-
-
-        function clickHandler() {
-            let hundeAlder = document.querySelector("#guessfield").value;
-            let formularAlder = hundeAlder * Math.log(12);
-            alert(formularAlder)
-        }
+        let hundealder = prompt("hvor gammel er din hund?")
+        console.log(hundealder + Math.log(12))
 
     </script>
 </body>
