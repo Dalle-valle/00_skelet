@@ -13,15 +13,26 @@
     <p id="hilsen"></p>
 
     <script>
+        // variabel med antal timer rejsen tager, kan også laves som en formular i html
         let timer = 6.5;
+
+        // formlen for co2 ved at gange timer med 109.
         let co2Udledt = timer * 109;
 
+
+        // hvis co2 er under 100, sig dette
         if (co2Udledt < 100) {
             console.log("Du har fløjet i " + timer + "timer" + " og udledt " + co2Udledt + "kg i CO2." + " Tæt på Thunberg");
+
+            // ellers hvis co2 er over eller = 100 og mindre end 200, sig dette
         } else if (co2Udledt >= 100 && co2Udledt < 200) {
             console.log("Du har fløjet i " + timer + "timer" + " og udledt " + co2Udledt + "kg i CO2." + " Ja ja, du behøver ikke at melde dig ud af Å!");
+
+            // ellers hvis co2 er over eller = 200 og mindre end 600 sig dette
         } else if (co2Udledt >= 200 && co2Udledt < 600) {
             console.log("Du har fløjet i " + timer + "timer" + " og udledt " + co2Udledt + "kg i CO2." + " Det er godt for turismen i nordeuropa.");
+
+            // ellers hvis det er over 600, sig dette
         } else if (co2Udledt > 600) {
             console.log("Du har fløjet i " + timer + "timer" + " og udledt " + co2Udledt + "kg i CO2." + " Nå ja vi kan jo altid kolonisere en anden planet ...");
         }

@@ -13,23 +13,36 @@
     <p id="hilsen"></p>
 
     <script>
+        // Variablen hilsen som skal ændres baseret på klokken
         let hilsen;
+
+        // Variablen som skal indeholde klokken
         let myDate = new Date();
+
+        // Variablen der skal holde styr på hvad time vi er i (klokken)
         let timer = myDate.getHours();
 
+        // udskriv nuværende dato og tid
         console.log(myDate);
 
+        // hvis klokken er over eller = 5, og klokken er mindre eller = 10, så skal den sige godmorgen
         if (timer >= 5 && timer <= 10) {
             hilsen = "godmorgen";
+
+            // Hvis klokken er over eller = 10 og under eller = 8, så skal den sige goddag
         } else if (timer >= 10 && timer <= 18) {
             hilsen = "goddag";
+
+            // Hvis klokken er over eller = 18 og under eller = 24, så skal den sige godaften
         } else if (timer >= 18 && timer <= 24) {
             hilsen = "Godaften";
+
+            // Hvis klokken er over eller =24 og under eller = 5, sig godmorgen
         } else if (timer >= 24 && timer <= 5)
             hilsen = "Godnat";
 
 
-
+        // skriv den nuværende hilsen i p tagget
 
         document.querySelector("#hilsen").textContent = hilsen + " og velkommen til 2. semester"
 

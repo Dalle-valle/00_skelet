@@ -28,33 +28,41 @@
 
     </div>
     <script>
+        // eventlistener på send knappen
         document.querySelector("#submitalder").addEventListener("click", clickHandler)
 
-
+        // kalder funktionen fra eventlistener
 
         function clickHandler() {
 
 
-
+            // henter værdien for den ældste alder (første boks)
             let ageOne = document.querySelector("#alderfield1").value;
+
+            // henter værdien for den yngste alder (anden boks)
             let ageTwo = document.querySelector("#alderfield2").value;
+
+            // selve date reglen (half your age plus seven)
             let dateRule = ageOne / 2 + 7;
 
 
 
 
-
+            // hvis datereglen overholdes siger den godt match efter det kalder den funktionen for at tjekke om begge er over 15 år og fortæller hvor ung en person du må date
             if (dateRule <= ageTwo) {
                 alert("I er et godt match");
                 console.log(dateRule);
                 checkLegal()
+
+
+                // ellers fortæl at personen er for ung og check om de er over 15 og hvad for en alder de burde date fra.
             } else if (dateRule => ageTwo) {
                 alert("Personen er for ung og du burde ikke date personen");
                 console.log(dateRule);
                 checkLegal()
 
             }
-
+            // tjekker om de er myndige og alerter datereglens tidligste alder baseret på den indtastede værdi.
             function checkLegal() {
                 if (ageOne < 15) {
                     alert("DU SKAL VÆRE OVER 15 ÅR!");

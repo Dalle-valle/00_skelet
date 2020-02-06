@@ -31,26 +31,35 @@
     </div>
 
     <script>
+        // y er vores variabel med det RIGTIGE svar
         let y = 5
-        var guess = 1;
 
+
+        // guess er antal gæt
+        var guess = 1;
+        // tilføjer en eventlistener til formularen i html der kalder en klikhandler funktion
 
         document.querySelector("#submitguess").addEventListener("click", clickHandler)
 
 
-
+        // funktionen
         function clickHandler() {
-
+            // henter værdien af det indtastede nummer i HTML boksen
             var x = document.querySelector("#guessField").value;
-
+            // hvis x er == y så er det rigtigt og vi sender en alert med at det var rigtigt  og hvor mange guesses de brugte, #nemt
             if (x == y) {
                 alert("TILLYKKE du gætte det på  " +
                     guess + " gæt ");
+
+                // hvis nummeret er for højt, alert det er for højt
             } else if (x > y)
 
             {
                 guess++;
                 alert("Desværre, prøv et mindre nummer");
+
+
+                // ellers er nummeret for lavt og alert det til brugeren
             } else {
                 guess++;
                 alert("Desværre, prøv et større nummer")

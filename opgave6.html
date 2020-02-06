@@ -13,22 +13,35 @@
 
 
     <script>
+        // Vi spørger brugeren om at angive en længde og en bredde. Prompt gør at der kommer en alert som har en formular indbygget så brugeren kan skrive en kommando
         let længde = prompt("Angiv længde");
         let bredde = prompt("Angiv bredde");
 
+
+
+        // Kalder funktionen for at finde arealet
+
         function areal(l, b) {
+
+            // laver en variabel der der regner det ud for os
             let a = (l * b);
+
+            // hvis arealet er 0, dvs at der ikke bliver skrevet noget eller hvis der er skrevet 0 * 0, så returnerer den at vi skal bruge tal og prøve igen
             if (a == 0) {
                 return (`Husk Længde og bredde skal være tal. \n Prøv igen`);
+
+                // hvis resultatet er NaN (Not a Number) så giver den en fejl og beder brugeren om at prøve igen med tal
             } else if (isNaN(a)) {
                 return (`Fejl. \n Prøv igen med tal`);
             } else {
+                // ellers returnerer vi arealet via formlen areal = længde * bredde (a=l*b) og spørger om vi vil lave et nyt areal
                 return (`Arealet er ${a}. \n Vil du lave et nyt areal?`)
             }
         }
+        // Laver en variabel der sender resultatet tilbage til brugeren
         let resultat = areal(længde, bredde);
         confirm(resultat);
-
+        // hvis der bliver trykket confirm, så reloader den siden
         if (confirm) {
             location.reload();
         }

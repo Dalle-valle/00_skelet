@@ -13,10 +13,15 @@
 
 
     <script>
+        // variabel der spørger om antal timer rejsen tager
         let timer = prompt("Angiv rejse i timer");
+
+        // samme formel som tidligere der beregner co2 per time
         let co2Udledt = timer * 109;
         //        let bredde = prompt("Angiv bredde");
 
+
+        // selve funktionen som beregner, ligesom med arealet
         function regneStykke(t, c) {
             let a = (t * c);
             if (a == 0) {
@@ -25,6 +30,8 @@
                 return (`Fejl. \n Prøv igen med tal`);
             }
         }
+
+        // Samme som med arealet, her confirmer vi og reloader så vi kan blive ved med at indtaste en ny værdi.
         let resultat = regneStykke(timer, co2Udledt);
         confirm(resultat);
 
