@@ -30,7 +30,10 @@
     <script>
         document.querySelector("#submitalder").addEventListener("click", clickHandler)
 
+
+
         function clickHandler() {
+
 
 
             let ageOne = document.querySelector("#alderfield1").value;
@@ -38,12 +41,27 @@
             let dateRule = ageOne / 2 + 7;
 
 
-            if (ageOne < 15) {
-                alert("DU SKAL VÆRE OVER 15 ÅR!");
-            } else if (ageTwo < 15) {
-                alert("DU SKAL VÆRE OVER 15 ÅR!");
-            } else if (ageTwo => dateRule) {
-                alert("I er et godt match, du kan date en som er " + dateRule + " år gammel, hvis det skulle være")
+
+
+
+            if (dateRule <= ageTwo) {
+                alert("I er et godt match");
+                console.log(dateRule);
+                checkLegal()
+            } else if (dateRule => ageTwo) {
+                alert("Personen er for ung og du burde ikke date personen");
+                console.log(dateRule);
+                checkLegal()
+
+            }
+
+            function checkLegal() {
+                if (ageOne < 15) {
+                    alert("DU SKAL VÆRE OVER 15 ÅR!");
+                } else if (ageTwo < 15) {
+                    alert("DU SKAL VÆRE OVER 15 ÅR!");
+
+                } else alert(dateRule + " er den yngste du burde date")
             }
         }
 

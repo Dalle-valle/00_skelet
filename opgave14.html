@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+
+    <style>
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+        .form {
+            padding: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <div class="form">
+        <label for="guessField">Check hundealder </label>
+        <input type="text" id="guessField" class="guessField">
+        <input type="submit" value="Tjek hundealder" class="guessSubmit" id="submitguess">
+    </div>
+
+
+
+    <script>
+        document.querySelector("#submitguess").addEventListener("click", clickHandler);
+
+
+        function clickHandler() {
+            let hundeAlder = document.querySelector("#guessfield").value;
+            let formularAlder = hundeAlder * Math.log(12);
+            alert(formularAlder)
+        }
+
+    </script>
+</body>
+
+</html>
